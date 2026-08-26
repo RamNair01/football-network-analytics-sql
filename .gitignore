@@ -1,0 +1,12 @@
+# Ignore the script that builds the raw data tables
+scripts/build_raw_data.py
+
+# Local database credentials
+.env
+
+# Local source data (large files and subject to source terms)
+data/raw/*.csv
+
+# Python artefacts
+__pycache__/
+*.py[cod]
