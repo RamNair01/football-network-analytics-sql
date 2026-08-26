@@ -1,6 +1,6 @@
 # [WIP] Football Network Analytics with SQL
 
-I am revisiting SQL by engineering and analysing the football data used in my MSc thesis. The original thesis workflow was developed in Python; this repository is a local SQL-based recreation of the data pipeline and analysis environment.
+I am revisiting SQL by engineering and analysing the football data used in my MSc thesis. The original thesis workflow was developed in Python; this repository is a local SQL-based recreation (mostly) of the data pipeline and analysis environment.
 
 This project is a work in progress.
 
