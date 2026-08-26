@@ -2,6 +2,8 @@
 
 I am revisiting SQL by engineering and analysing the football data used in my MSc thesis. The original thesis workflow was developed in Python; this repository is a local SQL-based recreation of the data pipeline and analysis environment.
 
+This project is a work in progress.
+
 The original Python project is available at [football-passing-networks](https://github.com/RamNair01/football-passing-networks).
 
 The repository includes the database schema, data-loading queries, and local Docker configuration.
