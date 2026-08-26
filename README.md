@@ -2,7 +2,11 @@
 
 I am revisiting SQL by engineering and analysing the football data used in my MSc thesis. The original thesis workflow was developed in Python; this repository is a local SQL-based recreation of the data pipeline and analysis environment.
 
-The repository includes the database schema, data-loading queries, and local Docker configuration. Source CSV data are kept out of version control because of their size and licensing considerations.
+The original Python project is available at [football-passing-networks](https://github.com/RamNair01/football-passing-networks).
+
+The repository includes the database schema, data-loading queries, and local Docker configuration.
+
+Source CSV data are kept out of version control because of their size and licensing considerations.
 
 ## Local setup
 
@@ -10,4 +14,4 @@ The repository includes the database schema, data-loading queries, and local Doc
 2. Start PostgreSQL with `docker compose up -d`.
 3. Run the SQL files in `sql/` to create the schema and load locally available raw data.
 
-See [data/raw/README.md](data/raw/README.md) for the local data inputs and rebuild notes.
+See [data/raw/README.md](data/raw/README.md) for the local data inputs.
