@@ -15,12 +15,3 @@ The event data use StatsBomb Open Data at commit `b878744`, matching the
 thesis pipeline. Follow the source terms when sharing analysis based on these
 data, including attribution to StatsBomb.
 
-## Rebuild command
-
-```bash
-python3 scripts/build_raw_data.py \
-  --thesis-data-dir "/path/to/Master Thesis Writing/code/data"
-```
-
-The command writes the local inputs and downloads all event feeds. It resumes
-from `events_2015_16.csv.partial` if a download is interrupted.
