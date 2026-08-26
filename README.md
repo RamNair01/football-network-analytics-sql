@@ -8,6 +8,17 @@ The repository includes the database schema, data-loading queries, and local Doc
 
 Source CSV data are kept out of version control because of their size and licensing considerations.
 
+## Data sources
+
+- [StatsBomb Open Data](https://github.com/statsbomb/open-data) supplies event and match data.
+- [ClubElo](http://clubelo.com/) supplies pre-match team ratings.
+
+### StatsBomb attribution
+
+[![StatsBomb logo](assets/statsbomb-logo.jpg)](https://statsbomb.com/)
+
+Use of the source data remains subject to the terms set by each provider.
+
 ## Local setup
 
 1. Copy `.env.example` to `.env` and set a local PostgreSQL password.
