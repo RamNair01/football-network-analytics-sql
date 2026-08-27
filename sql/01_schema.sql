@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS raw.matches (
 );
 CREATE TABLE IF NOT EXISTS raw.events (
     match_id BIGINT NOT NULL,
-    event_id UUID,
+    event_id UUID PRIMARY KEY,
     event_index INTEGER,
     period SMALLINT,
     minute SMALLINT,
@@ -61,4 +61,3 @@ CREATE TABLE IF NOT EXISTS raw.team_name_mapping (
     clubelo_team_name TEXT NOT NULL,
     PRIMARY KEY (competition_name, statsbomb_team_name)
 );
-

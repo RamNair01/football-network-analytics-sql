@@ -17,4 +17,4 @@ FROM raw.team_name_mapping;
 COPY raw.events
 FROM '/data/raw/events_2015_16.csv' WITH (FORMAT csv, HEADER true);
 SELECT COUNT(*) AS events_count
-FROM raw.events
+FROM raw.events;
