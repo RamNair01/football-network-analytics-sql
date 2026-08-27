@@ -37,7 +37,6 @@ CREATE TABLE IF NOT EXISTS raw.events (
     substitution_outcome TEXT,
     card_type TEXT
 );
-
 CREATE TABLE IF NOT EXISTS raw.clubelo_ratings (
     competition_name TEXT NOT NULL,
     clubelo_team_name TEXT NOT NULL,

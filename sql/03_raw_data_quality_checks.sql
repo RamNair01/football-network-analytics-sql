@@ -27,7 +27,7 @@ SELECT match_id,
 FROM raw.events
 GROUP BY match_id,
     event_id
-HAVING COUNT(*) > 1
+HAVING COUNT(*) > 1;
     /* Counting if all events have a match_id that exists 
      in the matches table. 
      */
@@ -71,3 +71,16 @@ FROM (
             clubelo_team_name
         FROM raw.clubelo_ratings
     ) AS missing_elo_histories;
+
+
+/* A bit of a silly check, but just checking if the 
+ number of matches in the matches table is the same
+ as the number of matches in the expected of the 2015-16 season.
+ */
+SELECT
+    COUNT(*) AS total_matches,
+    COUNT(*) FILTER (
+        WHERE match_date >= DATE '2015-08-01'
+          AND match_date < DATE '2016-08-01'
+    ) AS matches_in_2015_16_range
+FROM raw.matches;
