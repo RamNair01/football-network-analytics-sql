@@ -1,3 +1,14 @@
+/*
+  Using truncate to empty the tables before loding raw data so that I don't run into
+  'duplicate primary key' errors when I run this script multiple times.
+*/
+TRUNCATE TABLE
+  raw.events,
+  raw.matches,
+  raw.clubelo_ratings,
+  raw.non_league_fixtures,
+  raw.team_name_mapping;
+
 COPY raw.matches
 FROM '/data/raw/matches_2015_16.csv' WITH (FORMAT csv, HEADER true);
 SELECT COUNT(*) AS match_count

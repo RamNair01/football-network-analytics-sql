@@ -28,9 +28,10 @@ FROM raw.events
 GROUP BY match_id,
     event_id
 HAVING COUNT(*) > 1;
-    /* Counting if all events have a match_id that exists 
-     in the matches table. 
-     */
+/* Counting if all events have a match_id that exists 
+in the matches table. If the count is more than 0, then there is a mismatch between the two tables.
+The result of this query is indeed null.
+*/
 SELECT COUNT(*) AS events_with_no_match
 FROM raw.events e
     LEFT JOIN raw.matches m ON e.match_id = m.match_id
@@ -40,7 +41,7 @@ WHERE m.match_id IS NULL;
  */
 SELECT DISTINCT match_id
 FROM raw.events
-EXCEPT -- NOT FOR SELF: https://www.geeksforgeeks.org/sql/sql-except-clause/
+EXCEPT -- NOTE FOR SELF: https://www.geeksforgeeks.org/sql/sql-except-clause/: it returns rows from the first query that are not present in the second query.
 SELECT match_id
 FROM raw.matches;
 /* I want to check the team name mismatch 
@@ -71,7 +72,6 @@ FROM (
             clubelo_team_name
         FROM raw.clubelo_ratings
     ) AS missing_elo_histories;
-
 
 /* A bit of a silly check, but just checking if the 
  number of matches in the matches table is the same

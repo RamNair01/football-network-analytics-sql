@@ -44,7 +44,23 @@ SELECT event_id,
     minute * 60 + second AS event_time_seconds
 FROM raw.events;
 
---- Just checking that the view works
+
+CREATE OR REPLACE VIEW staging.clubelo_ratings AS
+SELECT competition_name,
+    clubelo_team_name,
+    elo,
+    valid_from,
+    valid_to
+FROM raw.clubelo_ratings;
+
+CREATE OR REPLACE VIEW staging.non_league_fixtures AS
+SELECT date,
+    home_team,
+    away_team,
+    competition
+FROM raw.non_league_fixtures;
+
+--- Just checking that the view works for the events table
 SELECT *
 FROM staging.events
 WHERE is_successful_pass OR is_goal
@@ -57,10 +73,25 @@ LIMIT 20;
 
 SELECT *
 FROM staging.events
+WHERE NOT is_successful_pass AND NOT is_goal
+LIMIT 20;
+
+SELECT *
+FROM staging.events
 WHERE is_successful_pass
 LIMIT 20;
 
 SELECT *
 FROM staging.events
 WHERE is_goal
+LIMIT 20;
+
+SELECT *
+FROM staging.events
+WHERE shot_xg IS NOT NULL
+LIMIT 20;
+
+SELECT *
+FROM staging.events
+WHERE substitution_outcome IS NOT NULL
 LIMIT 20;
